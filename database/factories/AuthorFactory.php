@@ -24,7 +24,8 @@ class AuthorFactory extends Factory
             'gender' => $gender,
             'dob' => fake()->date(),
             'user_id' => User::factory()->create(),
-            'address' => fake()->address()
+            'address' => fake()->address(),
+            'avatar' => fake()->imageUrl(),
         ];
     }
 }
