@@ -11,7 +11,7 @@ import Footer from "@/Components/Footer.vue";
 const useMain = useMainStore();
 const { isPostOverlay, isCropperModal, isImageDisplay } = storeToRefs(useMain);
 
-const user = usePage().props.auth.user;
+// const user = usePage().props.auth.user;
 
 </script>
 

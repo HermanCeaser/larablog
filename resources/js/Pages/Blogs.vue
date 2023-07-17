@@ -1,7 +1,11 @@
 <script setup>
 import MainNavLayout from '@/Layouts/MainNavLayout.vue';
 import { Head, Link } from '@inertiajs/vue3';
+import Pagination from '@/Components/Pagination.vue';
 // import Tag from '@/Components/Tag.vue'
+
+defineProps({blogs: Object});
+
 
 </script>
 
@@ -19,7 +23,7 @@ import { Head, Link } from '@inertiajs/vue3';
                 </p>
             </div>
             <ul>
-                <li class="py-12">
+                <li v-for="blog in blogs.data" class="py-12">
                     <article>
                         <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                             <dl>
@@ -33,7 +37,7 @@ import { Head, Link } from '@inertiajs/vue3';
                                     <div>
                                         <h2 class="text-2xl font-bold leading-8 tracking-tight">
                                             <Link href="/" class="text-gray-900 dark:text-gray-100">
-                                            New features in V1
+                                            {{ blog.title}}
                                             </Link>
                                         </h2>
                                         <div class="flex flex-wrap">
@@ -64,6 +68,7 @@ import { Head, Link } from '@inertiajs/vue3';
                     </article>
                 </li>
             </ul>
+            <Pagination :links="blogs.links" />
         </div>
     </MainNavLayout>
 </template>

@@ -35,7 +35,7 @@ function toggleNav() {
 
                 <div v-for="link in navLinks" :key="link.title" class="px-12 py-4">
                     <Link :href="link.href" class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                        @Click="onToggleNav">
+                        @Click="toggleNav">
                     {{ link.title }}
                     </Link>
                 </div>
