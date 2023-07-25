@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LangSwitchController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+Route::get('/switch-lang', [LangSwitchController::class, 'change'])->name('lang.switch');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
