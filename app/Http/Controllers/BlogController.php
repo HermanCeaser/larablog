@@ -20,6 +20,7 @@ class BlogController extends Controller
                     'title' => $blog->title,
                     'tags' => $blog->tags,
                     'content' => $blog->content,
+                    'summary' => $blog->summary,
                     'is_published' => $blog->is_published,
                     'cover_image' => $blog->cover_image,
                     'published_at' => $blog->published_at,
@@ -29,5 +30,10 @@ class BlogController extends Controller
 
         // dd($blogs);
         return Inertia::render('Blogs', ['blogs' => $blogs]);
+    }
+
+    public function show(Blog $blog)
+    {
+        return Inertia::render('BlogDetail', ['blog' => $blog]);
     }
 }

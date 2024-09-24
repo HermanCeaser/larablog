@@ -19,6 +19,8 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [BlogController::class, 'index'])->name('blog.index');
+Route::get('blog/{blog}', [BlogController::class, 'show'])->name('blog.show');
+
 Route::get('/switch-lang', [LangSwitchController::class, 'change'])->name('lang.switch');
 
 Route::get('/dashboard', function () {

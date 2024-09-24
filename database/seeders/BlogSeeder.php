@@ -14,7 +14,7 @@ class BlogSeeder extends Seeder
      */
     public function run(): void
     {
-        $blogs = Blog::factory()->count(25)->create();
+        $blogs = Blog::factory()->count(200)->create();
 
         $blogs->each(function ($blog) {
             BlogTags::factory()->count(rand(1, 3))->create([
